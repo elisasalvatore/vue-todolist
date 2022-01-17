@@ -18,9 +18,10 @@
             <button @click="addItem">Aggiungi</button>
 
             <ul>
-                <li 
-                v-for="(item, i) in todo" 
-                v-bind:class="[item.done === true ? 'striked-text' : '' ]">{{item.text}} 
+                <li v-for="(item, i) in todo" v-bind:class="[item.done === true ? 'striked-text' : '' ]" @click="getDone(i)"> 
+                
+                    {{item.text}} 
+
                     <div @click="removeItemList(i)" class="cross"> X</div> 
                     <!--removeItemList(i): la (i) è importante per specificare quale item si intende cancellare dalla lista. 
                     Senza (i) cancellerebbe sempre il primo item della lista anche se si clicca per cancellarne un altro' -->

@@ -15,33 +15,47 @@
 //cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, 
 //che quindi viene aggiunto alla lista dei todo esistenti.
 
+// Bonus:
+// 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
+// 2- cliccando sul testo dell’item, invertire il valore della proprietà done del todo corrispondente 
+//(se done era uguale a false, impostare true e viceversa)
+
 new Vue({
     el:"#app",
     data: {
         todo: [
             {
                 text: "Fare i compiti",
-                done: false,
+                done: null,
             },
             {
                 text: "Fare la spesa",
-                done: true,
+                done: null,
             },
             {
                 text: "Fare il bucato",
-                done: false,
+                done: null,
             },
         ],
         temporaryItem: '', //nell'input andremo a scrivere il nuovo item da inserire
     },
     methods: {
+        getDone: function(i) {
+            // this.todo[i].done === false;
+            // if (!this.todo[i].done ){
+            //     this.todo[i].done = true;
+            // } else {
+            //     this.todo[i].done = false;
+            // }
+            this.todo[i].done = !this.todo[i].done; //deve essere il contrario di sè stesso
+        },
         removeItemList: function(index) {
             this.todo.splice(index, 1); //significa:"voglio cancellare UN item partendo dall'INDEX iniziale"
         },
         addItem: function() {
             this.todo.push({
                 text:this.temporaryItem,
-                done: false,
+                done: null,
             }); //richiamiamo il temporaryItem scritto dall'utente per poi aggiungerlo alla lista 
             this.temporaryItem = ''; //per lasciare input vuoto una volta aggiunto un nuovo item
         },
