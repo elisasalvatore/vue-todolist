@@ -13,6 +13,10 @@
     <div id="app">
 
         <div class="container-list">
+            <input v-model="temporaryItem" @keyup.enter="addItem" placeholder="Scrivi un nuovo item"> 
+            <!--@keyup.enter: una volta scritto l'item se si preme il pulsante 'invio' il nuovo item viene inserito nella lista-->
+            <button @click="addItem">Aggiungi</button>
+
             <ul>
                 <li 
                 v-for="(item, i) in todo" 
