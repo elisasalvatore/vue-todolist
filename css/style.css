@@ -6,8 +6,19 @@
 
 ul {
     list-style: none;
+    padding: 20px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
 }
 
 .striked-text {
     text-decoration: line-through;
+}
+
+.cross {
+    cursor: pointer;
+    padding-right: 20px;
 }
