@@ -13,9 +13,7 @@ new Vue({
             {
                 text: "Fare il bucato",
                 done: false,
-            }
-         ],
-
-    }
-
+            },
+        ],
+    },
 });

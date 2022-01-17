@@ -7,3 +7,7 @@
 ul {
     list-style: none;
 }
+
+.striked-text {
+    text-decoration: line-through;
+}
