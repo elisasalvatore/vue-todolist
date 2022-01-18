@@ -40,14 +40,19 @@ new Vue({
         temporaryItem: '', //nell'input andremo a scrivere il nuovo item da inserire
     },
     methods: {
-        getDone: function(i) {
+        getDone: function(item) {
             // this.todo[i].done === false;
             // if (!this.todo[i].done ){
             //     this.todo[i].done = true;
             // } else {
             //     this.todo[i].done = false;
             // }
-            this.todo[i].done = !this.todo[i].done; //deve essere il contrario di sè stesso
+           
+            // this.todo[i].done = !this.todo[i].done; //deve essere il contrario di sè stesso
+
+            item.done = !item.done
+            //se lavoro sul data metto il this prima, mentre se lavoro sull'oggetto scrivo direttamente dove vado a lavorare 
+            //(in questo caso lavoro direttamente sull'item)
         },
         removeItemList: function(index) {
             this.todo.splice(index, 1); //significa:"voglio cancellare UN item partendo dall'INDEX iniziale"

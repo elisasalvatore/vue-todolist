@@ -24,7 +24,7 @@
                 <ul class="items-box"> 
                     <li v-for="(item, i) in todo" class= "list-item">
 
-                        <div @click="getDone(i)" v-bind:class="{'striked-text' : item.done}">
+                        <div @click="getDone(item)" v-bind:class="{'striked-text' : item.done}">
                                 <!-- v-bind:class="[item.done === true ? 'striked-text' : '' ]"
                                 LINE 27 => "attiva striked-text solo se item.done  TRUE" --> 
                                 {{item.text}} 
