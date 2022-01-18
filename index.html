@@ -22,17 +22,21 @@
 
             <div id="container-list">
                 <ul class="items-box"> 
-                    <li 
-                    v-for="(item, i) in todo" 
-                    v-bind:class="['list-item', item.done === true ? 'striked-text' : '' ]" 
-                    @click="getDone(i)"> {{item.text}} 
-    
-                    <div @click="removeItemList(i)" class="remove"> 
-                        <!--removeItemList(i): la (i) è importante per specificare quale item si intende cancellare dalla lista. 
-                        Senza (i) cancellerebbe sempre il primo item della lista anche se si clicca per cancellarne un altro' -->
-                        Rimuovi
-                    </div> 
-                </li>
+                    <li v-for="(item, i) in todo" class= "list-item">
+
+                        <div @click="getDone(i)" v-bind:class="{'striked-text' : item.done}">
+                                <!-- v-bind:class="[item.done === true ? 'striked-text' : '' ]"
+                                LINE 27 => "attiva striked-text solo se item.done  TRUE" --> 
+                                {{item.text}} 
+                        </div>  
+                        
+                        <div @click="removeItemList(i)" class="remove"> 
+                            <!--removeItemList(i): la (i) è importante per specificare quale item si intende cancellare dalla lista. 
+                            Senza (i) cancellerebbe sempre il primo item della lista anche se si clicca per cancellarne un altro' -->
+                            Rimuovi
+                        </div> 
+
+                    </li>
                 </ul>
             </div>
         </div>

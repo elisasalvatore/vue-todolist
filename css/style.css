@@ -23,9 +23,13 @@
 #container-input > input, 
 #container-input > button {
     height: 25px;
+    font-size: 15px;
+    padding: 0 5px;
+    line-height: 20px;
 }
 
 #container-input > input {
+    width: 180px;
     margin-right: 5px;
 }
 
@@ -67,7 +71,7 @@ li {
 
 .list-item:hover {
     color: #ccc;
-    border: 1px solid black;
+    border: 1px solid darkcyan;
     border-radius: 20px;
 }
 

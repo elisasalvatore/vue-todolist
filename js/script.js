@@ -26,15 +26,15 @@ new Vue({
         todo: [
             {
                 text: "Fare i compiti",
-                done: null,
+                done: false,
             },
             {
                 text: "Fare la spesa",
-                done: null,
+                done: false,
             },
             {
                 text: "Fare il bucato",
-                done: null,
+                done: false,
             },
         ],
         temporaryItem: '', //nell'input andremo a scrivere il nuovo item da inserire
@@ -54,10 +54,10 @@ new Vue({
         },
         addItem: function() {
             this.todo.push({
-                text:this.temporaryItem,
-                done: null,
+                text: this.temporaryItem,
+                done: false,
             }); //richiamiamo il temporaryItem scritto dall'utente per poi aggiungerlo alla lista 
-            this.temporaryItem = ''; //per lasciare input vuoto una volta aggiunto un nuovo item
+            this.temporaryItem = ''; //per lasciare il placeholder dell'input vuoto una volta aggiunto un nuovo item
         },
     },
 });
